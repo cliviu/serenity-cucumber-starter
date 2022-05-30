@@ -25,6 +25,7 @@ public class SearchStepDefinitions {
         actor.attemptsTo(
                 LookForInformation.about(term)
         );
+        System.out.println("StepThread " + Thread.currentThread().getName() +  " STEP {actor} looks up {string} ");
     }
 
     @Then("{actor} should see information about {string}")
@@ -32,5 +33,6 @@ public class SearchStepDefinitions {
         actor.attemptsTo(
                 Ensure.that(WikipediaArticle.HEADING).hasText(term)
         );
+        System.out.println("StepThread " + Thread.currentThread().getName() +  " STEP {actor} should see information about {string} ");
     }
 }

@@ -6,13 +6,10 @@ import org.junit.platform.suite.api.SelectClasspathResource;
 import org.junit.platform.suite.api.Suite;
 
 
-
-
 @Suite
 @IncludeEngines("cucumber")
 @CucumberOptions(
-		plugin = "io.cucumber.core.plugin.SerenityReporter",
-        features = "src/test/resources/features"
+		plugin = "io.cucumber.core.plugin.SerenityReporter"
 )
 @SelectClasspathResource("/features/parallel")
 public class CucumberTestSuite {}
